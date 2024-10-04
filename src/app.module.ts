@@ -3,6 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { RubricModule } from './rubric/rubric.module';
+import { CriteriaModule } from './criteria/criteria.module';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -23,6 +26,8 @@ import { AppService } from './app.service';
         rejectUnauthorized: false, // Permite conexiones sin verificar el certificado, útil en desarrollo
       }
     }),
+    RubricModule,
+    CriteriaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
