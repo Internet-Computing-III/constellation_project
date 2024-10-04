@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { StudentModule } from './users/student/student.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AppService } from './app.service';
         rejectUnauthorized: false, // Permite conexiones sin verificar el certificado, útil en desarrollo
       }
     }),
+    StudentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
