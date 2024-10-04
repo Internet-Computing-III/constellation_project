@@ -4,6 +4,8 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { StudentModule } from './users/student/student.module';
+import { SkillsModule } from './skills/skills.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import { StudentModule } from './users/student/student.module';
       }
     }),
     StudentModule,
+    SkillsModule,
+    ScheduleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
