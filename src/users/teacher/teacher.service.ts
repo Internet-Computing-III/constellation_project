@@ -8,15 +8,14 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class TeacherService {
-
   constructor(
-    @InjectRepository(Teacher) private readonly teacherRepository: Repository<Teacher>
+    @InjectRepository(Teacher)
+    private readonly teacherRepository: Repository<Teacher>,
   ) {}
 
   async create(createTeacherDto: CreateTeacherDto) {
-    const newTeacher = Object.assign({...createTeacherDto, id: uuid()});
+    const newTeacher = Object.assign({ ...createTeacherDto, id: uuid() });
     return this.teacherRepository.save(newTeacher);
-    
   }
 
   findAll() {

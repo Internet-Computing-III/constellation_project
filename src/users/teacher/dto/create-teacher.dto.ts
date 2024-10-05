@@ -1,20 +1,20 @@
-import { IsString, IsNotEmpty, IsEmail, IsStrongPassword } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsEmail,
+  IsStrongPassword,
+} from 'class-validator';
 
 export class CreateTeacherDto {
-    
-    @IsString()
-    readonly name: string
+  @IsString()
+  readonly name: string;
 
-    @IsString()
-    readonly last_name: string
+  @IsString()
+  readonly last_name: string;
 
-    @IsEmail()
-    readonly email: string
+  @IsEmail()
+  readonly email: string;
 
-    @IsStrongPassword()
-    readonly password: string
-
-    
-
-
+  @IsStrongPassword()
+  readonly password: string;
 }
