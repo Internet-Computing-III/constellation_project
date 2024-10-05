@@ -1,11 +1,14 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TeacherModule } from './users/teacher/teacher.module';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RubricModule } from './rubric/rubric.module';
 import { CriteriaModule } from './criteria/criteria.module';
 import { join } from 'path';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { join } from 'path';
     }),
     RubricModule,
     CriteriaModule,
+    TeacherModule,
+    AuthModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],
